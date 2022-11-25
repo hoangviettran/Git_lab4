@@ -60,6 +60,18 @@ static void MX_GPIO_Init(void);
 void task1run(){
 	HAL_GPIO_TogglePin(TASK_1_GPIO_Port, TASK_1_Pin);
 }
+void task2run(){
+	HAL_GPIO_TogglePin(TASK_2_GPIO_Port, TASK_2_Pin);
+}
+void task3run(){
+	HAL_GPIO_TogglePin(TASK_3_GPIO_Port, TASK_3_Pin);
+}
+void task4run(){
+	HAL_GPIO_TogglePin(TASK_4_GPIO_Port, TASK_4_Pin);
+}
+void task5run(){
+	HAL_GPIO_TogglePin(TASK_5_GPIO_Port, TASK_5_Pin);
+}
 /* USER CODE END 0 */
 
 /**
@@ -94,7 +106,11 @@ int main(void)
   /* USER CODE BEGIN 2 */
   HAL_TIM_Base_Start_IT (& htim2 ) ;
   /* USER CODE END 2 */
-  SCH_Add_Task(task1run, 100, 200);
+  SCH_Add_Task(task1run, 1000, 500);
+  SCH_Add_Task(task2run, 1000, 1000);
+  SCH_Add_Task(task3run, 1000, 1500);
+  SCH_Add_Task(task4run, 1000, 2000);
+  SCH_Add_Task(task5run, 2500, 0);
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
   while (1)
